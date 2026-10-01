@@ -1,0 +1,62 @@
+name: Bug report
+description: The install script, a patch or a development feature does not work as documented.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The development copy changes only itself. If your normal Steam install misbehaves, check that first with all mods disabled; a problem there is not caused by this repository.
+  - type: input
+    id: sdk-version
+    attributes:
+      label: Release
+      description: The release of this repository you installed, for example 0.1.0-alpha.1.
+    validations:
+      required: true
+  - type: input
+    id: game-build
+    attributes:
+      label: Game build
+      description: The build number shown on the development copy's main menu, or on the Steam copy's if the install failed.
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Where it went wrong
+      options:
+        - Running install.ps1
+        - Starting the development copy
+        - Attaching a debugger
+        - A development patch (debug keys, overlays, load panel, data folder)
+        - The Unity development player
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command or launcher
+      description: The install.ps1 command line with its parameters, or the launcher you used (Dev-Launch.bat or Dev-Launch-WaitForDebugger.bat).
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead. Say whether doorstop_loaded.txt appeared beside the exe.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Output and logs
+      description: |
+        The full output of install.ps1, including its final patch report, if the install failed. Otherwise the development copy's DevData\Player.log from the session where it happened. Drag files into this box.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Optional. Windows version, PowerShell version, .NET SDK version, and your debugger (dnSpy, Rider, Visual Studio) if it matters.

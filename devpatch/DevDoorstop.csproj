@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>DevDoorstop</AssemblyName>
+    <RootNamespace>Doorstop</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <!-- DebugOverlays.cs reads the sim's flow texture through a pointer. -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <Deterministic>true</Deterministic>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <!-- The game's own 0Harmony, referenced but never copied: the runtime resolves it out of
+       the Managed folder, which is the same instance the game and its mods use. -->
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(OniManaged)/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(OniManaged)/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- The patches reach the game's own types: Assembly-CSharp for Game, Grid, SimMessages,
+         SaveLoader, SimDebugView and the rest; -firstpass for KMonoBehaviour and
+         DistributionPlatform (LoadProgress.cs). Same never-copied pattern as 0Harmony above:
+         the runtime already has both loaded. -->
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(OniManaged)/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>$(OniManaged)/Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <!-- DebugKeys.cs: ScreenCapture for the local bug bundle. -->
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>$(OniManaged)/UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

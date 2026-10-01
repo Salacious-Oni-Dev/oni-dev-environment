@@ -1,0 +1,3 @@
+# Build output of the patcher and DevDoorstop.
+bin/
+obj/

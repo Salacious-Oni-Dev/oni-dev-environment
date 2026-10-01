@@ -1,0 +1,21 @@
+name: Feature request
+description: A development feature or patch the development copy does not have.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What you want to do
+      description: Describe the debugging or development task, not only the patch you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What you tried
+      description: What the development copy offers for this today, and where it falls short.
+  - type: input
+    id: sdk-version
+    attributes:
+      label: Release
+      description: The release you are using.

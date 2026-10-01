@@ -1,0 +1,27 @@
+oni-dev-environment
+Copyright (c) 2026 Salacious
+
+Licensed under the MIT License; see LICENSE.
+
+Oxygen Not Included is developed and published by Klei Entertainment. This project is
+not affiliated with or endorsed by Klei Entertainment.
+
+This repository contains no file of the game: no Klei source code, game binaries, game
+assets or game data. The install script copies the game from your own Steam install into
+a folder you choose and patches only that copy. The game's assemblies are referenced at
+build time and are not copied into this repository.
+
+No third-party source code is included. Third-party components are obtained at install
+time, each under its own license, and none is redistributed here:
+
+- Unity Doorstop (https://github.com/NeighTools/UnityDoorstop), version 4.5.0, licensed
+  under the GNU Lesser General Public License version 2.1. Downloaded unmodified by
+  install.ps1 from its GitHub release and checked against a fixed SHA-256.
+- Mono.Cecil (https://github.com/jbevain/cecil), version 0.11.6, licensed under the MIT
+  License, Copyright (c) 2008 - 2015 Jb Evain and Copyright (c) 2008 - 2011 Novell, Inc.
+  Restored from NuGet when the patcher in tool/ is built.
+- Harmony (https://github.com/pardeike/Harmony), licensed under the MIT License,
+  Copyright (c) 2017 Andreas Pardeike. The copy the game ships; devpatch/ references it at
+  build time and uses it at runtime.
+- With -DevelopmentPlayer only: Unity's Windows player support package, downloaded from
+  Unity under Unity's own terms.
