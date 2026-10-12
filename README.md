@@ -1,5 +1,7 @@
 # oni-dev-environment
 
+*Oxygen Not Included: now with actual reasons for the oxygen to be not included.*
+
 A development install of Oxygen Not Included, made from your own Steam copy of the game by one
 script. It gives you:
 
@@ -15,7 +17,21 @@ The script copies the game to a new folder and changes only that copy. Your Stea
 only read. It is part of the Oxygen Not Included simulation SDK; see
 [oni-sdk-docs](https://github.com/Salacious-Oni-Dev/oni-sdk-docs) for the rest of it.
 
+Mods built on the SDK need one of two framework mods, both in the
+[oni-framework-api](https://github.com/Salacious-Oni-Dev/oni-framework-api) release: a mod that uses
+the replacement simulation library needs `OniFramework` together with `OniFramework.Library`, which
+it is built on; a mod that does not needs only `OniFramework.Library` 1.3 or later, and runs on the
+game's own `SimDLL.dll`.
+
 **Status: alpha.**
+
+## Alpha 2 (current release)
+
+Alpha 2 (`0.1.0-alpha.2`) is the SDK's current release. This repository did not change in it; its
+latest version is [0.1.0-alpha.1](CHANGELOG.md).
+
+[Release notes](https://github.com/Salacious-Oni-Dev/oni-sdk-docs/releases/tag/v0.1.0-alpha.2) ·
+[What is in Alpha 2, and its known limitations](https://github.com/Salacious-Oni-Dev/oni-sdk-docs/blob/main/NEXT-ALPHA.md#alpha-2)
 
 ## Why use it
 
@@ -368,6 +384,7 @@ MIT, see `LICENSE`.
 
 Oxygen Not Included is developed and published by Klei Entertainment. This project is not
 affiliated with or endorsed by Klei.
+How this project follows Klei's modding guidelines, rule by rule: [COMPLIANCE](https://github.com/Salacious-Oni-Dev/oni-sdk-docs/blob/main/COMPLIANCE.md).
 
 Development of this project uses AI coding assistants. All changes are reviewed and released
 by the maintainer.
